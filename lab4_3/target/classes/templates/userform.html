@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="layout.html">
+<head>
+    <title th:replace="layout::title"></title>
+</head>
+<body>
+    <section th:fragment="content">
+        <h1>Add User</h1>
+        <form th:action="@{/save}" th:object="${user}" method="post">
+            <div class="form-group">
+                <label for="contactInfoType">Contact Info Type</label>
+                <input type="text" class="form-control" id="contactInfoType" name="contactInfoType" th:field="*{contactInfoType}">
+                <div class="text-danger" th:if="${#fields.hasErrors('contactInfoType')}" th:errors="*{contactInfoType}"></div>
+            </div>
+            <div class="form-group">
+                <label for="contactDetail">Contact Detail</label>
+                <input type="text" class="form-control" id="contactDetail" name="contactDetail" th:field="*{contactDetail}">
+                <div class="text-danger" th:if="${#fields.hasErrors('contactDetail')}" th:errors="*{contactDetail}"></div>
+            </div>
+            <div class="form-group">
+                <label for="effectiveDate">Effective Date</label>
+                <input type="date" class="form-control" id="effectiveDate" name="effectiveDate" th:field="*{effectiveDate}">
+                <div class="text-danger" th:if="${#fields.hasErrors('effectiveDate')}" th:errors="*{effectiveDate}"></div>
+            </div>
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="startDate" name="startDate" th:field="*{startDate}">
+                <div class="text-danger" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></div>
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" class="form-control" id="endDate" name="endDate" th:field="*{endDate}">
+                <div class="text-danger" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </section>
+</body>
+</html>
