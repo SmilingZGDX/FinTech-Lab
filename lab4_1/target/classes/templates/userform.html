@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorate="layout.html">
+<body>
+    <section layout:fragment="content">
+        <h1>Add User</h1>
+        <form th:action="@{save}" th:object="${user}" method="post">
+			<!-- Full Name -->
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" class="form-control" id="fullname" name="cstDetFullName" th:field="*{cstDetFullName}">
+                <div class="text-danger" th:if="${#fields.hasErrors('cstDetFullName')}" th:errors="*{cstDetFullName}"></div>
+            </div>
+			<!-- Email -->
+            <div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email" name="cstDetEmail" th:field="*{cstDetEmail}">
+				<div class="text-danger" th:if="${#fields.hasErrors('cstDetEmail')}" th:errors="*{cstDetEmail}"></div>
+            </div>
+			<!-- Contact -->
+			<div class="form-group">
+			    <label for="contact">Contact</label>
+			    <input type="text" class="form-control" id="contact" name="cstDetContact" th:field="*{cstDetContact}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetContact')}" th:errors="*{cstDetContact}"></div>
+			</div>
+			<!-- Status -->
+			<div class="form-group">
+			     <label for="status">Status</label>
+			     <input type="text" class="form-control" id="status" name="cstDetStatus" th:field="*{cstDetStatus}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetStatus')}" th:errors="*{cstDetStatus}"></div>
+			</div>
+			<!-- Date of Birth -->
+			<div class="form-group">
+				<label for="dob">Date of Birth</label>
+			    <input type="date" class="form-control" id="dob" name="cstDetDob" th:field="*{cstDetDob}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetDob')}" th:errors="*{cstDetDob}"></div>
+			</div>
+			<!-- Country -->
+			<div class="form-group">
+				<label for="country">Country</label>
+			    <input type="text" class="form-control" id="country" name="cstDetCountry" th:field="*{cstDetCountry}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetCountry')}" th:errors="*{cstDetCountry}"></div>
+			</div>
+			<!-- Mobile -->
+			<div class="form-group">
+				<label for="mobile">Mobile</label>
+			    <input type="text" class="form-control" id="mobile" name="cstDetMobile" th:field="*{cstDetMobile}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetMobile')}" th:errors="*{cstDetMobile}"></div>
+			</div>
+			<!-- Effective Date -->
+			<div class="form-group">
+				<label for="efctvDt">Effective Date</label>
+			    <input type="date" class="form-control" id="efctvDt" name="cstDetEfctvDt" th:field="*{cstDetEfctvDt}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetEfctvDt')}" th:errors="*{cstDetEfctvDt}"></div>
+			</div>
+			<!-- CRUD Value -->
+			    <div class="form-group">
+			    <label for="crudValue">CRUD Value</label>
+			    <input type="text" class="form-control" id="crudValue" name="cstDetCrudValue" th:field="*{cstDetCrudValue}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetCrudValue')}" th:errors="*{cstDetCrudValue}"></div>
+			</div>
+			<!-- User ID -->
+			<div class="form-group">
+			    <label for="userId">User ID</label>
+			    <input type="text" class="form-control" id="userId" name="cstDetUserId" th:field="*{cstDetUserId}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetUserId')}" th:errors="*{cstDetUserId}"></div>
+			</div>
+			<!-- Workspace ID -->
+			<div class="form-group">
+			     <label for="wsId">Workspace ID</label>
+			     <input type="text" class="form-control" id="wsId" name="cstDetWsId" th:field="*{cstDetWsId}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetWsId')}" th:errors="*{cstDetWsId}"></div>
+			</div>
+			<!-- Program ID -->
+			<div class="form-group">
+			     <label for="prgmId">Program ID</label>
+			     <input type="text" class="form-control" id="prgmId" name="cstDetPrgmId" th:field="*{cstDetPrgmId}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetPrgmId')}" th:errors="*{cstDetPrgmId}"></div>
+			</div>
+			<!-- Host Timestamp -->
+			<div class="form-group">
+			    <label for="hostTs">Host Timestamp</label>
+			    <input type="datetime-local" class="form-control" id="hostTs" name="cstDetHostTs" th:field="*{cstDetHostTs}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetHostTs')}" th:errors="*{cstDetHostTs}"></div>
+			</div>
+			<!-- Local Timestamp -->
+			<div class="form-group">
+			    <label for="localTs">Local Timestamp</label>
+			    <input type="datetime-local" class="form-control" id="localTs" name="cstDetLocalTs" th:field="*{cstDetLocalTs}">
+			    <div class="text-danger" th:if="${#fields.hasErrors('cstDetLocalTs')}" th:errors="*{cstDetLocalTs}"></div>
+			</div>
+			<!-- Accept Timestamp -->
+			<div class="form-group">
+			     <label for="acptTs">Accept Timestamp</label>
+			     <input type="datetime-local" class="form-control" id="acptTs" name="cstDetAcptTs" th:field="*{cstDetAcptTs}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetAcptTs')}" th:errors="*{cstDetAcptTs}"></div>
+			</div>
+			<!-- Accept Timestamp UTC Offset -->
+			     <div class="form-group">
+			     <label for="acptTsUtcOfst">Accept Timestamp UTC Offset</label>
+			     <input type="datetime-local" class="form-control" id="acptTsUtcOfst" name="cstDetAcptTsUtcOfst" th:field="*{cstDetAcptTsUtcOfst}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetAcptTsUtcOfst')}" th:errors="*{cstDetAcptTsUtcOfst}"></div>
+			</div>
+			<!-- UUID -->
+			<div class="form-group">
+			     <label for="uuid">UUID</label>
+			     <input type="text" class="form-control" id="uuid" name="cstDetUuid" th:field="*{cstDetUuid}">
+			     <div class="text-danger" th:if="${#fields.hasErrors('cstDetUuid')}" th:errors="*{cstDetUuid}"></div>
+			</div>
+																		
+            <button type="submit" class="btn btn-primary">Save</button>
+			<a href="/users" class="btn btn-secondary">Cancel</a>
+        </form>
+    </section>
+</body>
+</html>
