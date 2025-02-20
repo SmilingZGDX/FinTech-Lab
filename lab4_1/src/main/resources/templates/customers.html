@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="layout">
+<head>
+    <title>Customer List</title>
+</head>
+<body>
+    <div layout:fragment="content">
+        <h2>Customer List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Full Name</th>
+                    <th>Type</th>
+                    <th>DOB/DOI</th>
+                    <th>Status</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.customerNumber}"></td>
+                    <td th:text="${customer.customerFullName}"></td>
+                    <td th:text="${customer.customerType}"></td>
+                    <td th:text="${customer.customerDOB_DOI}"></td>
+                    <td th:text="${customer.customerStatus}"></td>
+                    <td th:text="${customer.customerContactNumber}"></td>
+                    <td th:text="${customer.customerEmail}"></td>
+                    <td th:text="${customer.customerCountryOrigin}"></td>
+                    <td><a th:href="@{'/delete/' + ${customer.customerNumber}}" class="btn btn-danger btn-sm">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

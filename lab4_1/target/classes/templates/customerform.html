@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="layout.html">
+<head>
+    <title>Add Customer</title>
+</head>
+<body>
+    <section layout:fragment="content">
+        <h1>Add Customer</h1>
+        <form th:action="@{/save}" th:object="${customerDetails}" method="post">
+            <div class="form-group"><label>Full Name</label><input type="text" class="form-control" th:field="*{customerFullName}"></div>
+            <div class="form-group"><label>Type</label><input type="text" class="form-control" th:field="*{customerType}"></div>
+            <div class="form-group"><label>Date of Birth/DOI</label><input type="date" class="form-control" th:field="*{customerDOB_DOI}"></div>
+            <div class="form-group"><label>Status</label><input type="text" class="form-control" th:field="*{customerStatus}"></div>
+            <div class="form-group"><label>Contact Number</label><input type="text" class="form-control" th:field="*{customerContactNumber}"></div>
+            <div class="form-group"><label>Mobile Number</label><input type="text" class="form-control" th:field="*{customerMobileNumber}"></div>
+            <div class="form-group"><label>Email</label><input type="email" class="form-control" th:field="*{customerEmail}"></div>
+            <div class="form-group"><label>Country of Origination</label><input type="text" class="form-control" th:field="*{customerCountryOrigin}"></div>
+            <div class="form-group"><label>Effective Date</label><input type="date" class="form-control" th:field="*{effectiveDate}"></div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </section>
+</body>
+</html>
